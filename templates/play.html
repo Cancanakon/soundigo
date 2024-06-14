@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Play Music</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script>
+        function playMusic(fileUrl) {
+            const audioPlayer = document.getElementById('audioPlayer');
+            audioPlayer.src = fileUrl;
+            audioPlayer.play();
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <!-- Sidebar content -->
+        </div>
+        <div class="main-content">
+            <h1>Play Music</h1>
+            <ul class="music-list">
+                {% for music in musics %}
+                    <li class="music-item">
+                        <a href="#" onclick="playMusic('{{ music.url }}')">{{ music.name }}</a> ({{ music.category }})
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <audio id="audioPlayer" controls>
+        Your browser does not support the audio element.
+    </audio>
+</body>
+</html>

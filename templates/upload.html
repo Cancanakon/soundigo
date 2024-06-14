@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Music</title>
+</head>
+<body>
+    <h1>Upload Music</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <label for="category">Category:</label>
+        <select name="category" id="category">
+            <option value="Pop">Pop</option>
+            <option value="Rock">Rock</option>
+            <option value="Jazz">Jazz</option>
+            <option value="Classical">Classical</option>
+            <option value="HipHop">HipHop</option>
+        </select>
+        <br>
+        <label for="file">Music File:</label>
+        <input type="file" name="file" id="file" required>
+        <br>
+        <button type="submit">Upload</button>
+    </form>
+</body>
+</html>
